@@ -6,15 +6,27 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page string="Specialist Journal">
+
+                    <!-- КНОПКА ДРУКУ -->
+                    <header>
+                        <button name="print_journal_report"
+                                string="Print Journal Report"
+                                type="object"
+                                class="btn-primary"/>
+                    </header>
+
+                    <!-- JOURNAL ENTRIES -->
                     <field name="journal_entry_ids">
-                        <tree editable="bottom">
+                        <list editable="bottom">
                             <field name="date"/>
                             <field name="user_id" readonly="1"/>
                             <field name="text"/>
-                        </tree>
+                        </list>
                     </field>
+
                 </page>
             </xpath>
         </field>
     </record>
 </odoo>
+
