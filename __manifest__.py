@@ -1,0 +1,17 @@
+{
+    "name": "Specialist Journal",
+    "version": "1.0.0",
+    "summary": "Journal of specialist notes for clients",
+    "category": "Custom",
+    "author": "Ihor Borunov",
+    "depends": ["base", "contacts"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/journal_rules.xml",
+        "views/journal_entry_views.xml",
+        "views/journal_template_views.xml",
+        "views/res_partner_views.xml",
+    ],
+    "installable": True,
+    "application": False,
+}
