@@ -1,11 +1,11 @@
 <odoo>
-    <record id="view_journal_template_tree" model="ir.ui.view">
-        <field name="name">journal.template.tree</field>
+    <record id="view_journal_template_list" model="ir.ui.view">
+        <field name="name">journal.template.list</field>
         <field name="model">specialist.journal.template</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
