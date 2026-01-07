@@ -1,13 +1,14 @@
 <odoo>
-    <record id="view_journal_entry_tree" model="ir.ui.view">
-        <field name="name">journal.entry.tree</field>
+    <record id="view_journal_entry_list" model="ir.ui.view">
+        <field name="name">journal.entry.list</field>
         <field name="model">specialist.journal.entry</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="date"/>
                 <field name="user_id"/>
                 <field name="partner_id"/>
-            </tree>
+                <field name="text"/>
+            </list>
         </field>
     </record>
 
@@ -19,7 +20,7 @@
                 <sheet>
                     <group>
                         <field name="date"/>
-                        <field name="user_id" readonly="1"/>
+                        <field name="user_id"/>
                         <field name="partner_id"/>
                         <field name="text"/>
                     </group>
