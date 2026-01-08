@@ -1,31 +1,24 @@
 <odoo>
-    <record id="view_journal_entry_list" model="ir.ui.view">
-        <field name="name">journal.entry.list</field>
-        <field name="model">specialist.journal.entry</field>
-        <field name="arch" type="xml">
-            <list>
-                <field name="date"/>
-                <field name="user_id"/>
-                <field name="partner_id"/>
-                <field name="text"/>
-            </list>
-        </field>
-    </record>
+    <record id="view_specialist_journal_entry_form" model="ir.ui.view">
+    <field name="name">specialist.journal.entry.form</field>
+    <field name="model">specialist.journal.entry</field>
+    <field name="arch" type="xml">
+        <form string="Journal Entry">
+            <sheet>
+                <group>
+                    <field name="date"/>
+                    <field name="user_id" readonly="1"/>
+                    <field name="partner_id"/>
+                </group>
+                <group>
+                    <field name="template_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                </group>
+                <group>
+                    <field name="text" widget="textarea"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
 
-    <record id="view_journal_entry_form" model="ir.ui.view">
-        <field name="name">journal.entry.form</field>
-        <field name="model">specialist.journal.entry</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="date"/>
-                        <field name="user_id"/>
-                        <field name="partner_id"/>
-                        <field name="text"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
 </odoo>
