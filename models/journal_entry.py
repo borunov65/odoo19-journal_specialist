@@ -24,3 +24,14 @@ class SpecialistJournalEntry(models.Model):
         ondelete="cascade"
     )
     text = fields.Text(string="Journal Note", required=True)
+
+    template_ids = fields.Many2many('specialist.journal.template', string="Templates")
+
+    @api.onchange('template_ids')
+    def _onchange_template_ids(self):
+        if self.template_ids:
+            combined_text = "\n\n".join(template.content for template in self.template_ids)
+            if self.text:
+                self.text += "\n\n" + combined_text
+            else:
+                self.text = combined_text
