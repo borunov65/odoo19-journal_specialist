@@ -12,6 +12,8 @@
         'views/journal_template_menu.xml',
         "views/journal_entry_views.xml",
         "views/res_partner_views.xml",
+        "reports/report_action.xml",
+        "reports/specialist_journal_report.xml",
     ],
     "installable": True,
     "application": False,
